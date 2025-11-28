@@ -8,58 +8,82 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Shohel's Premium Teal Palette */
-    --ash-grey: 136 23% 80%;
-    --muted-teal: 133 19% 59%;
-    --deep-teal: 165 19% 40%;
-    --dark-slate: 186 21% 26%;
-    --charcoal-blue: 201 20% 23%;
+    /* Dark Lite Aesthetic Color Palette - Balanced Dark-Light */
+    --dark-bg: 240 15% 12%;
+    --dark-soft: 240 15% 16%;
+    --dark-medium: 240 15% 20%;
+    --dark-light: 240 15% 24%;
+    
+    /* Purple variants - softer and lighter */
+    --purple-dark: 270 45% 45%;
+    --purple: 270 65% 60%;
+    --purple-bright: 270 75% 70%;
+    --purple-light: 270 55% 80%;
+    
+    /* Pink/Magenta variants - softer */
+    --pink-dark: 320 55% 55%;
+    --pink: 320 65% 65%;
+    --pink-bright: 320 75% 75%;
+    --pink-light: 320 60% 85%;
+    
+    /* Cyan variants - softer */
+    --cyan-dark: 180 65% 50%;
+    --cyan: 180 75% 60%;
+    --cyan-bright: 180 85% 70%;
+    --cyan-light: 180 70% 85%;
     
     /* Core Semantic Tokens */
-    --background: var(--ash-grey);
-    --foreground: var(--charcoal-blue);
+    --background: var(--dark-bg);
+    --foreground: var(--cyan-light);
     
-    --card: 0 0% 100%;
-    --card-foreground: var(--charcoal-blue);
+    --card: var(--dark-soft);
+    --card-foreground: var(--cyan-light);
     
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--charcoal-blue);
+    --popover: var(--dark-soft);
+    --popover-foreground: var(--cyan-light);
     
-    --primary: var(--deep-teal);
+    --primary: var(--purple);
     --primary-foreground: 0 0% 100%;
     
-    --secondary: var(--muted-teal);
-    --secondary-foreground: var(--charcoal-blue);
+    --secondary: var(--pink);
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: var(--ash-grey);
-    --muted-foreground: var(--dark-slate);
+    --muted: var(--dark-medium);
+    --muted-foreground: var(--purple-light);
     
-    --accent: var(--muted-teal);
-    --accent-foreground: var(--charcoal-blue);
+    --accent: var(--cyan);
+    --accent-foreground: var(--dark-bg);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: var(--muted-teal);
-    --input: var(--ash-grey);
-    --ring: var(--deep-teal);
+    --border: var(--purple-dark);
+    --input: var(--dark-medium);
+    --ring: var(--purple);
     
     --radius: 1rem;
     
-    /* Gradient Definitions */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--ash-grey)) 0%, hsl(var(--muted-teal)) 100%);
-    --gradient-teal: linear-gradient(135deg, hsl(var(--muted-teal)) 0%, hsl(var(--deep-teal)) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(var(--deep-teal)) 0%, hsl(var(--charcoal-blue)) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--muted-teal) / 0.3) 0%, transparent 70%);
+    /* Aesthetic Gradient Definitions - lighter tones */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--purple-dark)) 30%, hsl(var(--pink-dark)) 60%, hsl(var(--cyan-dark)) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 50%, hsl(var(--cyan)) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(var(--purple-dark)) 0%, hsl(var(--purple)) 50%, hsl(var(--purple-bright)) 100%);
+    --gradient-pink: linear-gradient(135deg, hsl(var(--pink-dark)) 0%, hsl(var(--pink)) 50%, hsl(var(--pink-bright)) 100%);
+    --gradient-cyan: linear-gradient(135deg, hsl(var(--cyan-dark)) 0%, hsl(var(--cyan)) 50%, hsl(var(--cyan-bright)) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--dark-soft)) 100%);
+    --gradient-full: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 33%, hsl(var(--cyan)) 66%, hsl(var(--purple-bright)) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--purple) / 0.3) 0%, hsl(var(--pink) / 0.25) 50%, transparent 100%);
     
-    /* Glassmorphism */
-    --glass-bg: hsl(0 0% 100% / 0.1);
-    --glass-border: hsl(var(--muted-teal) / 0.2);
+    /* Glassmorphism - lighter */
+    --glass-bg: hsl(var(--dark-soft) / 0.6);
+    --glass-border: hsl(var(--purple) / 0.25);
     
-    /* Shadows */
-    --shadow-soft: 0 8px 32px hsl(var(--deep-teal) / 0.12);
-    --shadow-glow: 0 0 40px hsl(var(--muted-teal) / 0.4);
-    --shadow-lift: 0 12px 48px hsl(var(--charcoal-blue) / 0.16);
+    /* Shadows - softer */
+    --shadow-soft: 0 8px 32px hsl(var(--purple-dark) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--purple) / 0.4);
+    --shadow-lift: 0 12px 48px hsl(var(--pink-dark) / 0.3);
+    --shadow-purple: 0 0 30px hsl(var(--cyan) / 0.3);
+    --shadow-pink: 0 0 30px hsl(var(--pink) / 0.3);
+    --shadow-cyan: 0 0 30px hsl(var(--cyan) / 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,10 +91,10 @@ All colors MUST be HSL.
   }
   
   .dark {
-    --background: var(--charcoal-blue);
-    --foreground: var(--ash-grey);
-    --card: var(--dark-slate);
-    --card-foreground: var(--ash-grey);
+    --background: var(--dark-bg);
+    --foreground: var(--cyan-light);
+    --card: var(--dark-soft);
+    --card-foreground: var(--cyan-light);
   }
 }
 
@@ -106,12 +130,56 @@ All colors MUST be HSL.
     background: var(--gradient-teal);
   }
   
+  .gradient-purple {
+    background: var(--gradient-purple);
+  }
+  
+  .gradient-pink {
+    background: var(--gradient-pink);
+  }
+  
+  .gradient-cyan {
+    background: var(--gradient-cyan);
+  }
+  
   .gradient-dark {
     background: var(--gradient-dark);
   }
   
+  .gradient-full {
+    background: var(--gradient-full);
+  }
+  
   .text-gradient {
+    background: var(--gradient-full);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-teal {
     background: var(--gradient-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-purple {
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-pink {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-cyan {
+    background: var(--gradient-cyan);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -127,6 +195,18 @@ All colors MUST be HSL.
   
   .shadow-lift {
     box-shadow: var(--shadow-lift);
+  }
+  
+  .shadow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+  
+  .shadow-pink {
+    box-shadow: var(--shadow-pink);
+  }
+  
+  .shadow-cyan {
+    box-shadow: var(--shadow-cyan);
   }
   
   .transition-smooth {

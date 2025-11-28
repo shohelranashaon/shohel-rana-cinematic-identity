@@ -1,5 +1,7 @@
 # Welcome to your Lovable project
 
+**Author**: Shohel Rana Shaon
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/7791efaf-96e0-41e9-aab6-2310fc178ec5
