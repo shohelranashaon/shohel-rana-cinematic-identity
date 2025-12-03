@@ -44,12 +44,11 @@ TTL: 3600 (or Auto)
 ```
 Type: CNAME
 Name: www
-Value: [YOUR_USERNAME].github.io
+Value: shohelranashaon.github.io
 TTL: 3600 (or Auto)
 ```
 
-**Important**: `[YOUR_USERNAME]` এর জায়গায় আপনার GitHub username লিখুন।  
-উদাহরণ: যদি আপনার username `shohelranashaon` হয়, তাহলে value হবে: `shohelranashaon.github.io`
+**✅ Your GitHub Username**: `shohelranashaon`
 
 ---
 
@@ -88,7 +87,7 @@ TTL: 3600 (or Auto)
    ```
    Type: CNAME Record
    Host: www
-   Value: [YOUR_USERNAME].github.io
+   Value: shohelranashaon.github.io
    TTL: Automatic
    ```
 
@@ -127,7 +126,7 @@ TTL: 3600 (or Auto)
    ```
    Type: CNAME
    Name: www
-   Value: [YOUR_USERNAME].github.io
+   Value: shohelranashaon.github.io
    TTL: 600 seconds
    ```
 
@@ -169,7 +168,7 @@ TTL: 3600 (or Auto)
    ```
    Type: CNAME
    Name: www
-   Target: [YOUR_USERNAME].github.io
+   Target: shohelranashaon.github.io
    Proxy status: DNS only (gray cloud)
    TTL: Auto
    ```
@@ -219,7 +218,7 @@ Visit: https://dnschecker.org/#A/shohelranashaon.site
 
 - **Main**: https://shohelranashaon.site
 - **WWW**: https://www.shohelranashaon.site
-- **GitHub Pages URL**: https://[YOUR_USERNAME].github.io
+- **GitHub Pages URL**: https://shohelranashaon.github.io
 
 ### 4. SSL Certificate Check করুন
 

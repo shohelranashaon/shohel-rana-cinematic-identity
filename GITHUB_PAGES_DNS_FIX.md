@@ -27,25 +27,18 @@ Domain does not resolve to the GitHub Pages server
 
 | Type | Name | Value | TTL |
 |------|------|-------|-----|
-| CNAME | www | **[YOUR_USERNAME].github.io** | 3600 |
+| CNAME | www | **shohelranashaon.github.io** | 3600 |
 
-**⚠️ Important**: `[YOUR_USERNAME]` এর জায়গায় আপনার **GitHub username** লিখুন।
-
-উদাহরণ: যদি আপনার GitHub username `shohelranashaon` হয়, তাহলে:
-- Value হবে: `shohelranashaon.github.io`
+**✅ Your GitHub Username**: `shohelranashaon`  
+**✅ CNAME Value**: `shohelranashaon.github.io`
 
 ---
 
 ## 📝 Step-by-Step Instructions
 
-### Step 1: GitHub Username খুঁজে বের করুন
+### Step 1: Domain Provider-এ DNS Records Add করুন
 
-1. GitHub-এ login করুন
-2. আপনার profile page-এ যান
-3. URL-এ দেখবেন: `https://github.com/[YOUR_USERNAME]`
-4. এই username-টি note করুন
-
-### Step 2: Domain Provider-এ DNS Records Add করুন
+**Your GitHub Username**: `shohelranashaon` ✅
 
 #### Namecheap-এর জন্য:
 1. **Domain List** → আপনার domain-এ **Manage** click করুন
@@ -94,8 +87,8 @@ Domain does not resolve to the GitHub Pages server
 ## 🔍 Common Mistakes
 
 ### ❌ Wrong CNAME Value
-- ❌ `shohelranashaon.github.io` (if your username is different)
-- ✅ `[YOUR_ACTUAL_USERNAME].github.io`
+- ❌ Any other username
+- ✅ `shohelranashaon.github.io` (Your correct username)
 
 ### ❌ Missing A Records
 - ❌ Only 1 or 2 A records

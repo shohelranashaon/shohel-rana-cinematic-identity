@@ -119,11 +119,11 @@ TTL: 3600
 ```
 Type: CNAME
 Name: www
-Value: [YOUR_USERNAME].github.io
+Value: shohelranashaon.github.io
 TTL: 3600
 ```
 
-**Important**: `[YOUR_USERNAME]` এর জায়গায় আপনার GitHub username লিখুন।
+**✅ Your GitHub Username**: `shohelranashaon`
 
 ### Step 3: Custom Domain Add
 1. GitHub repository → **Settings** → **Pages**
