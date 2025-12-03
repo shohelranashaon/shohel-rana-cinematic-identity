@@ -83,6 +83,58 @@ TTL: 3600 (or Auto)
 
 ---
 
+## 🐙 GitHub Pages-এ Deploy
+
+### Step 1: GitHub Pages Settings
+1. GitHub repository → **Settings** → **Pages**
+2. **Source** dropdown-এ **GitHub Actions** select করুন
+3. Save করুন
+
+### Step 2: DNS Configuration (সবচেয়ে গুরুত্বপূর্ণ!)
+
+**Apex Domain (shohelranashaon.site) - 4টি A Records:**
+```
+Type: A
+Name: @
+Value: 185.199.108.153
+TTL: 3600
+
+Type: A
+Name: @
+Value: 185.199.109.153
+TTL: 3600
+
+Type: A
+Name: @
+Value: 185.199.110.153
+TTL: 3600
+
+Type: A
+Name: @
+Value: 185.199.111.153
+TTL: 3600
+```
+
+**WWW Subdomain (www.shohelranashaon.site) - CNAME Record:**
+```
+Type: CNAME
+Name: www
+Value: [YOUR_USERNAME].github.io
+TTL: 3600
+```
+
+**Important**: `[YOUR_USERNAME]` এর জায়গায় আপনার GitHub username লিখুন।
+
+### Step 3: Custom Domain Add
+1. GitHub repository → **Settings** → **Pages**
+2. **Custom domain** field-এ `www.shohelranashaon.site` লিখুন
+3. **Save** করুন
+4. **Enforce HTTPS** automatically enable হবে (DNS propagate হওয়ার পর)
+
+**Detailed Guide**: দেখুন `GITHUB_PAGES_SETUP.md` file-এ
+
+---
+
 ## 📋 DNS Records (Common Providers)
 
 ### Namecheap
