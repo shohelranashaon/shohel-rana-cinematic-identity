@@ -1,10 +1,15 @@
-# Welcome to your Lovable project
+# Shohel Rana Shaon - Portfolio Website
 
 **Author**: Shohel Rana Shaon
 
+## 🌐 Live Website
+
+**Domain**: https://shohelranashaon.site  
+**Status**: ✅ Active and Live
+
 ## Project info
 
-**URL**: https://lovable.dev/projects/7791efaf-96e0-41e9-aab6-2310fc178ec5
+**Lovable Project URL**: https://lovable.dev/projects/7791efaf-96e0-41e9-aab6-2310fc178ec5
 
 ## How can I edit this code?
 
@@ -64,7 +69,43 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/7791efaf-96e0-41e9-aab6-2310fc178ec5) and click on Share -> Publish.
+### Option 1: Vercel (সবচেয়ে সহজ - Recommended)
+
+1. **Vercel account তৈরি করুন**: https://vercel.com/signup
+2. **GitHub repository connect করুন**:
+   - Vercel dashboard-এ "Add New Project" click করুন
+   - আপনার GitHub repository select করুন
+3. **Deploy করুন**: Settings automatically configure হবে (Vite preset)
+4. **Custom Domain add করুন**:
+   - Project settings → Domains
+   - আপনার domain name add করুন
+   - DNS records follow করুন
+
+### Option 2: Netlify
+
+1. **Netlify account তৈরি করুন**: https://app.netlify.com/signup
+2. **Deploy করুন**:
+   - "Add new site" → "Import an existing project"
+   - GitHub repository connect করুন
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+3. **Custom Domain add করুন**: Site settings → Domain management
+
+### Option 3: Traditional Hosting (cPanel)
+
+1. **Build করুন**: `npm run build`
+2. **dist folder upload করুন**: `public_html` folder-এ
+3. **.htaccess file**: `public/.htaccess` file already আছে
+
+### Quick Deploy with Vercel CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+**Detailed deployment guide**: দেখুন `DEPLOYMENT.md` file-এ
 
 ## Can I connect a custom domain to my Lovable project?
 

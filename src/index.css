@@ -14,23 +14,31 @@ All colors MUST be HSL.
     --dark-medium: 240 15% 20%;
     --dark-light: 240 15% 24%;
     
-    /* Purple variants - softer and lighter */
-    --purple-dark: 270 45% 45%;
-    --purple: 270 65% 60%;
-    --purple-bright: 270 75% 70%;
-    --purple-light: 270 55% 80%;
+    /* Purple variants - vibrant and beautiful */
+    --purple-dark: 270 50% 50%;
+    --purple: 270 70% 65%;
+    --purple-bright: 270 80% 75%;
+    --purple-light: 270 60% 85%;
     
-    /* Pink/Magenta variants - softer */
-    --pink-dark: 320 55% 55%;
-    --pink: 320 65% 65%;
-    --pink-bright: 320 75% 75%;
-    --pink-light: 320 60% 85%;
+    /* Pink/Magenta variants - vibrant */
+    --pink-dark: 320 60% 60%;
+    --pink: 320 70% 70%;
+    --pink-bright: 320 80% 80%;
+    --pink-light: 320 65% 88%;
     
-    /* Cyan variants - softer */
-    --cyan-dark: 180 65% 50%;
-    --cyan: 180 75% 60%;
-    --cyan-bright: 180 85% 70%;
-    --cyan-light: 180 70% 85%;
+    /* Cyan variants - vibrant */
+    --cyan-dark: 180 70% 55%;
+    --cyan: 180 80% 65%;
+    --cyan-bright: 180 90% 75%;
+    --cyan-light: 180 75% 88%;
+    
+    /* Additional vibrant colors */
+    --blue: 210 80% 65%;
+    --blue-bright: 210 90% 75%;
+    --orange: 25 85% 65%;
+    --orange-bright: 25 95% 75%;
+    --green: 142 70% 60%;
+    --green-bright: 142 80% 70%;
     
     /* Core Semantic Tokens */
     --background: var(--dark-bg);
@@ -63,27 +71,31 @@ All colors MUST be HSL.
     
     --radius: 1rem;
     
-    /* Aesthetic Gradient Definitions - lighter tones */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--purple-dark)) 30%, hsl(var(--pink-dark)) 60%, hsl(var(--cyan-dark)) 100%);
-    --gradient-teal: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 50%, hsl(var(--cyan)) 100%);
+    /* Aesthetic Gradient Definitions - vibrant and beautiful */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--purple-dark)) 25%, hsl(var(--pink-dark)) 50%, hsl(var(--cyan-dark)) 75%, hsl(var(--blue)) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 33%, hsl(var(--cyan)) 66%, hsl(var(--blue)) 100%);
     --gradient-purple: linear-gradient(135deg, hsl(var(--purple-dark)) 0%, hsl(var(--purple)) 50%, hsl(var(--purple-bright)) 100%);
     --gradient-pink: linear-gradient(135deg, hsl(var(--pink-dark)) 0%, hsl(var(--pink)) 50%, hsl(var(--pink-bright)) 100%);
     --gradient-cyan: linear-gradient(135deg, hsl(var(--cyan-dark)) 0%, hsl(var(--cyan)) 50%, hsl(var(--cyan-bright)) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--cyan)) 50%, hsl(var(--blue-bright)) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--pink)) 50%, hsl(var(--orange-bright)) 100%);
+    --gradient-green: linear-gradient(135deg, hsl(var(--green)) 0%, hsl(var(--cyan)) 50%, hsl(var(--green-bright)) 100%);
     --gradient-dark: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--dark-soft)) 100%);
-    --gradient-full: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 33%, hsl(var(--cyan)) 66%, hsl(var(--purple-bright)) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--purple) / 0.3) 0%, hsl(var(--pink) / 0.25) 50%, transparent 100%);
+    --gradient-full: linear-gradient(135deg, hsl(var(--purple)) 0%, hsl(var(--pink)) 20%, hsl(var(--cyan)) 40%, hsl(var(--blue)) 60%, hsl(var(--purple-bright)) 80%, hsl(var(--pink-bright)) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--purple) / 0.4) 0%, hsl(var(--pink) / 0.35) 30%, hsl(var(--cyan) / 0.3) 60%, transparent 100%);
     
     /* Glassmorphism - lighter */
     --glass-bg: hsl(var(--dark-soft) / 0.6);
     --glass-border: hsl(var(--purple) / 0.25);
     
-    /* Shadows - softer */
-    --shadow-soft: 0 8px 32px hsl(var(--purple-dark) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--purple) / 0.4);
-    --shadow-lift: 0 12px 48px hsl(var(--pink-dark) / 0.3);
-    --shadow-purple: 0 0 30px hsl(var(--cyan) / 0.3);
-    --shadow-pink: 0 0 30px hsl(var(--pink) / 0.3);
-    --shadow-cyan: 0 0 30px hsl(var(--cyan) / 0.3);
+    /* Shadows - vibrant and glowing */
+    --shadow-soft: 0 8px 32px hsl(var(--purple-dark) / 0.3);
+    --shadow-glow: 0 0 50px hsl(var(--purple) / 0.5), 0 0 100px hsl(var(--pink) / 0.3);
+    --shadow-lift: 0 12px 48px hsl(var(--pink-dark) / 0.4), 0 0 60px hsl(var(--purple) / 0.2);
+    --shadow-purple: 0 0 40px hsl(var(--purple) / 0.5), 0 0 80px hsl(var(--purple) / 0.2);
+    --shadow-pink: 0 0 40px hsl(var(--pink) / 0.5), 0 0 80px hsl(var(--pink) / 0.2);
+    --shadow-cyan: 0 0 40px hsl(var(--cyan) / 0.5), 0 0 80px hsl(var(--cyan) / 0.2);
+    --shadow-blue: 0 0 40px hsl(var(--blue) / 0.5), 0 0 80px hsl(var(--blue) / 0.2);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,6 +152,18 @@ All colors MUST be HSL.
   
   .gradient-cyan {
     background: var(--gradient-cyan);
+  }
+  
+  .gradient-blue {
+    background: var(--gradient-blue);
+  }
+  
+  .gradient-orange {
+    background: var(--gradient-orange);
+  }
+  
+  .gradient-green {
+    background: var(--gradient-green);
   }
   
   .gradient-dark {

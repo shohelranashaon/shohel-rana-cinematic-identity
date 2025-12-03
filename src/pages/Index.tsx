@@ -1,52 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, Phone, MapPin, GraduationCap, Briefcase, BookOpen, FileText, Code2, TestTube, Database, Globe } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Github, Linkedin, Mail, Phone, MapPin, Code2, ExternalLink, Briefcase, BookOpen, FileText, TestTube, Globe } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 const Index = () => {
-  const particlesRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
 
-  useEffect(() => {
-    // Create floating particles
-    if (particlesRef.current) {
-      for (let i = 0; i < 15; i++) {
-        const particle = document.createElement("div");
-        particle.className = "absolute rounded-full opacity-20 animate-float";
-        particle.style.width = `${Math.random() * 60 + 20}px`;
-        particle.style.height = particle.style.width;
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
-        const colors = ['--purple', '--pink', '--cyan'];
-        particle.style.background = `hsl(var(${colors[Math.floor(Math.random() * colors.length)]}))`;
-        particle.style.animationDelay = `${Math.random() * 6}s`;
-        particle.style.animationDuration = `${Math.random() * 4 + 4}s`;
-        particlesRef.current.appendChild(particle);
-      }
-    }
-  }, []);
-
-  const education = [
-    {
-      institution: "Bangladesh University of Business and Technology (BUBT)",
-      degree: "Bachelor of Science in Computer Science and Engineering (BSc in CSE)",
-      period: "Feb 2020 – June 2024",
-      details: "CGPA: 3.69 out of 4.0"
-    },
-    {
-      institution: "Kurigram Government College, Kurigram",
-      degree: "Science HSC-2019",
-      period: "2019",
-      details: "GPA: 4.75 out of 5.00"
-    },
-    {
-      institution: "Kurigram Government High School, Kurigram",
-      degree: "Science SSC-2016",
-      period: "2016",
-      details: "GPA: 5.00 out of 5.00"
-    }
-  ];
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    const mailtoLink = `mailto:shohelranas165@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
+    window.location.href = mailtoLink;
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
   const experiences = [
     {
@@ -92,153 +67,122 @@ const Index = () => {
     }
   ];
 
-  const projects = [
-    {
-      title: "Youth Organization Bangladesh",
-      desc: "YOB is a youth group in Bangladesh that helps young people learn skills, grow as leaders, and take part in social activities. I have tested the YOB website, including login, forms, password checks, and navigation, to ensure everything works smoothly.",
-      tech: ["Manual Testing", "Web Testing", "Jira"],
-      type: "Testing"
-    },
-    {
-      title: "Somvabona Web and Mobile App Testing",
-      desc: "Somvabona is a health screening system where doctors and medical assistants visit schools or institutions to check students' health. I have manually tested the Web and Mobile applications, including dashboard, schools and campuses management, doctors and medical assistants assignment, student health screening, invoices and reports, and user permissions.",
-      tech: ["Manual Testing", "Web Testing", "Mobile Testing", "Jira"],
-      type: "Testing"
-    },
-    {
-      title: "Swag Labs Automation (Playwright + JavaScript)",
-      desc: "Automated the Swag Labs website using Playwright with JavaScript to test login, add-to-cart, and checkout functionalities following the Page Object Model (POM) design. Implemented Allure reporting for detailed test execution results and debugging insights.",
-      tech: ["Playwright", "JavaScript", "POM", "Allure"],
-      type: "Automation"
-    },
-    {
-      title: "Convay Meeting Automation (Playwright + JavaScript)",
-      desc: "Developed an automation framework for the Convay Meeting Platform using Playwright (JavaScript), covering host meeting creation, link sharing, participant joining, and audio validation (mic mute/unmute, WebRTC permissions). Implemented a POM-based structure with centralized locators and reusable utilities, and integrated Allure reporting with cross-browser support.",
-      tech: ["Playwright", "JavaScript", "POM", "Allure", "WebRTC"],
-      type: "Automation"
-    },
-    {
-      title: "Shomvabona Quiz App",
-      desc: "Tested the Somvabona web and mobile app manually to ensure smooth performance. I checked main features like the dashboard, school and user management, attendance, quizzes, reports, and user permissions to confirm everything works properly.",
-      tech: ["Manual Testing", "Web Testing", "Mobile Testing", "Excel"],
-      type: "Testing"
-    }
-  ];
-
   const technologies = [
     { category: "Languages", items: ["JavaScript", "SQL (basic)"] },
     { category: "Automation and Testing Tools", items: ["Playwright", "Selenium", "Postman", "JMeter", "Node.js"] },
     { category: "Reporting Tools", items: ["Allure"] }
   ];
 
-  return (
-    <div className="min-h-screen bg-dark-bg overflow-hidden">
-      {/* Floating Particles */}
-      <div ref={particlesRef} className="fixed inset-0 pointer-events-none z-0" />
+  const projects = [
+    {
+      title: "Youth Organization Bangladesh",
+      desc: "YOB is a youth group in Bangladesh that helps young people learn skills, grow as leaders, and take part in social activities. I have tested the YOB website, including login, forms, password checks, and navigation, to ensure everything works smoothly.",
+      codeUrl: "#",
+      demoUrl: "#"
+    },
+    {
+      title: "Somvabona Web and Mobile App Testing",
+      desc: "Somvabona is a health screening system where doctors and medical assistants visit schools or institutions to check students' health. I have manually tested the Web and Mobile applications, including dashboard, schools and campuses management, doctors and medical assistants assignment, student health screening, invoices and reports, and user permissions.",
+      codeUrl: "#",
+      demoUrl: "#"
+    },
+    {
+      title: "Swag Labs Automation (Playwright + JavaScript)",
+      desc: "Automated the Swag Labs website using Playwright with JavaScript to test login, add-to-cart, and checkout functionalities following the Page Object Model (POM) design. Implemented Allure reporting for detailed test execution results and debugging insights.",
+      codeUrl: "https://github.com/shohelranashaon",
+      demoUrl: "#"
+    },
+    {
+      title: "Convay Meeting Automation (Playwright + JavaScript)",
+      desc: "Developed an automation framework for the Convay Meeting Platform using Playwright (JavaScript), covering host meeting creation, link sharing, participant joining, and audio validation (mic mute/unmute, WebRTC permissions). Implemented a POM-based structure with centralized locators and reusable utilities, and integrated Allure reporting with cross-browser support.",
+      codeUrl: "https://github.com/shohelranashaon",
+      demoUrl: "#"
+    },
+    {
+      title: "Shomvabona Quiz App",
+      desc: "Tested the Somvabona web and mobile app manually to ensure smooth performance. I checked main features like the dashboard, school and user management, attendance, quizzes, reports, and user permissions to confirm everything works properly.",
+      codeUrl: "#",
+      demoUrl: "#"
+    }
+  ];
 
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-start px-6 py-20">
-        <div className="max-w-7xl mx-auto w-full z-10">
-          {/* Background Circles */}
-          <div className="absolute right-[20%] top-[30%] w-96 h-96 rounded-full bg-gradient-to-br from-cyan/20 via-purple/20 to-pink/20 blur-3xl opacity-40 animate-float" />
-          <div className="absolute right-[10%] top-[50%] w-64 h-64 rounded-full bg-gradient-to-br from-purple/20 via-pink/20 to-cyan/20 blur-3xl opacity-40 animate-float" style={{ animationDelay: '2s' }} />
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <div className="relative space-y-6 animate-fade-up">
-              <Badge className="glass text-purple-light border-purple px-4 py-2 rounded-lg inline-block">
-                Software Test Engineer • SQA
-              </Badge>
-              <h1 className="font-heading text-6xl lg:text-8xl font-bold leading-tight">
-                <span className="block">
-                  <span 
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(180 75% 70%) 0%, hsl(270 65% 70%) 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                  >
-                    Hi, I'm{' '}
-                  </span>
-                  <span 
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(270 65% 70%) 0%, hsl(320 65% 75%) 50%, hsl(180 75% 70%) 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                  >
-                    Shohel Rana
-                  </span>
-                </span>
-                <span 
-                  className="block"
-                  style={{
-                    background: 'linear-gradient(135deg, hsl(180 75% 70%) 0%, hsl(270 65% 70%) 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
-                >
-                  Shaon
-                </span>
-              </h1>
-              
-              {/* Contact Info */}
-              <div className="space-y-3 text-purple-light">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-purple" />
-                  <span className="text-sm">Rainkhola, Cha Block, Mirpur-2, Dhaka</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-purple" />
-                  <a href="mailto:shohelranas165@gmail.com" className="text-sm hover:text-purple-bright transition-smooth">
-                    shohelranas165@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-purple" />
-                  <a href="tel:+880177693865" className="text-sm hover:text-purple-bright transition-smooth">
-                    +880177693865
-                  </a>
-                </div>
-                <div className="flex gap-4 pt-2">
-                  <a 
-                    href="https://www.linkedin.com/in/md-shohel-rana-shaon-306183209/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="glass p-3 rounded-full hover:shadow-purple transition-smooth hover:scale-110"
-                  >
-                    <Linkedin className="w-5 h-5 text-purple" />
-                  </a>
-                  <a 
-                    href="https://github.com/shohelranashaon" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="glass p-3 rounded-full hover:shadow-pink transition-smooth hover:scale-110"
-                  >
-                    <Github className="w-5 h-5 text-pink" />
-                  </a>
-                  <a 
-                    href="mailto:shohelranas165@gmail.com"
-                    className="glass p-3 rounded-full hover:shadow-cyan transition-smooth hover:scale-110"
-                  >
-                    <Mail className="w-5 h-5 text-cyan" />
-                  </a>
-                </div>
+      <section className="relative min-h-screen flex items-start pt-20 px-6 py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Content */}
+            <div className="space-y-8 z-10 lg:pt-8">
+              <div className="space-y-6">
+                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                  Hi, I'm <span className="text-[#00d4ff]">Shohel Rana</span>
+                  <br />
+                  <span className="text-[#00d4ff]">Shaon</span>
+                </h1>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Software Test Engineer & SQA Specialist. Building quality software through testing, automation, and continuous learning.
+                </p>
               </div>
+
+              {/* Social Icons - Square buttons */}
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/in/md-shohel-rana-shaon-306183209/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-[#1a1a1a] border border-gray-800 rounded-lg flex items-center justify-center hover:border-[#00d4ff] hover:bg-[#1a1a1a]/50 transition-all"
+                >
+                  <Linkedin className="w-5 h-5 text-white" />
+                </a>
+                <a
+                  href="https://github.com/shohelranashaon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-[#1a1a1a] border border-gray-800 rounded-lg flex items-center justify-center hover:border-[#00d4ff] hover:bg-[#1a1a1a]/50 transition-all"
+                >
+                  <Github className="w-5 h-5 text-white" />
+                </a>
+                <a
+                  href="mailto:shohelranas165@gmail.com"
+                  className="w-12 h-12 bg-[#1a1a1a] border border-gray-800 rounded-lg flex items-center justify-center hover:border-[#00d4ff] hover:bg-[#1a1a1a]/50 transition-all"
+                >
+                  <Mail className="w-5 h-5 text-white" />
+                </a>
+                <a
+                  href="tel:+880177693865"
+                  className="w-12 h-12 bg-[#1a1a1a] border border-gray-800 rounded-lg flex items-center justify-center hover:border-[#00d4ff] hover:bg-[#1a1a1a]/50 transition-all"
+                >
+                  <Phone className="w-5 h-5 text-white" />
+                </a>
+              </div>
+
+              {/* View My Work Button */}
+              <Button
+                onClick={() => {
+                  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold px-8 py-6 rounded-lg transition-all shadow-lg shadow-[#00d4ff]/30"
+              >
+                View My Work
+              </Button>
             </div>
 
-            {/* Image */}
-            <div className="relative animate-fade-up animation-delay-300">
-              <div className="relative w-full aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 bg-gradient-full rounded-full opacity-30 blur-3xl animate-float" />
-                <img
-                  src={heroPortrait}
-                  alt="Shohel Rana Shaon"
-                  className="relative glass rounded-3xl w-full h-full object-cover shadow-lift"
-                />
+            {/* Right - Profile Picture */}
+            <div className="relative flex items-start justify-end order-last">
+              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                {/* Glow effect behind */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
+                {/* Border with glow */}
+                <div className="relative rounded-full border-4 border-[#00d4ff] p-1 shadow-[0_0_50px_rgba(0,212,255,0.6)]">
+                  <div className="rounded-full overflow-hidden bg-[#1a1a1a] p-1">
+                    <img
+                      src={heroPortrait}
+                      alt="Shohel Rana Shaon"
+                      className="rounded-full w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -246,96 +190,55 @@ const Index = () => {
       </section>
 
       {/* Career Objective Section */}
-      <section className="relative py-24 px-6 bg-dark-soft">
+      <section className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-4xl mx-auto">
-          <div className="glass p-12 rounded-3xl shadow-soft space-y-6 border-purple/30">
-            <div className="flex items-center gap-3">
-              <FileText className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl font-bold text-cyan-light">Career Objective</h2>
+          <Card className="bg-[#1a1a1a] border border-gray-800 p-8 rounded-lg">
+            <div className="flex items-center gap-3 mb-4">
+              <FileText className="w-8 h-8 text-[#00d4ff]" />
+              <h2 className="text-3xl font-bold text-[#00d4ff]">Career Objective</h2>
             </div>
-            <div className="h-1 w-20 bg-gradient-teal rounded-full" />
-            <p className="text-lg text-purple-light leading-relaxed">
+            <p className="text-gray-300 leading-relaxed text-lg">
               To build a career as a SQA Engineer by applying skills in software testing, automation, and bug tracking to ensure product quality. Dedicated to continuous learning and growth with the aim of becoming an Automation Engineer in the future.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className="relative py-24 px-6 bg-dark-bg">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <GraduationCap className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">Education</h2>
-            </div>
-            <p className="text-lg text-purple-light">Academic journey and achievements</p>
-          </div>
-
-          <div className="space-y-6">
-            {education.map((edu, idx) => (
-              <Card
-                key={idx}
-                className="glass p-8 rounded-2xl hover:shadow-lift transition-smooth border-purple/30"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex-1">
-                      <h3 className="font-heading text-2xl font-semibold text-cyan-light mb-2">
-                        {edu.institution}
-                      </h3>
-                      <p className="text-lg text-purple-light mb-1">{edu.degree}</p>
-                      <p className="text-sm text-purple/80">{edu.period}</p>
-                    </div>
-                    <Badge className="bg-gradient-purple text-white px-4 py-2">
-                      {edu.details}
-                    </Badge>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+          </Card>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="relative py-24 px-6 bg-dark-soft">
+      <section className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <Briefcase className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">Experience</h2>
-            </div>
-            <p className="text-lg text-purple-light">Professional journey in software testing</p>
+          <div className="flex items-center justify-center gap-3 mb-16">
+            <Briefcase className="w-8 h-8 text-[#00d4ff]" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-center">
+              <span className="text-[#00d4ff]">Experience</span>
+            </h2>
           </div>
 
           <div className="space-y-8">
             {experiences.map((exp, idx) => (
               <Card
                 key={idx}
-                className="glass p-8 rounded-2xl hover:shadow-lift transition-smooth border-purple/30"
+                className="bg-[#1a1a1a] border border-gray-800 p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
               >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div>
-                      <h3 className="font-heading text-2xl font-semibold text-cyan-light mb-1">
-                        {exp.title}
-                      </h3>
-                      <p className="text-lg text-purple-light">{exp.company}</p>
-                    </div>
-                    <Badge className="bg-gradient-pink text-white px-4 py-2">
-                      {exp.period}
-                    </Badge>
+                <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1 text-[#00d4ff]">
+                      {exp.title}
+                    </h3>
+                    <p className="text-gray-300">{exp.company}</p>
                   </div>
-                  <ul className="space-y-2 mt-4">
-                    {exp.responsibilities.map((resp, i) => (
-                      <li key={i} className="flex items-start gap-3 text-purple-light">
-                        <span className="text-purple mt-1.5">•</span>
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="bg-[#00d4ff] text-black px-4 py-2 rounded-lg font-semibold">
+                    {exp.period}
+                  </div>
                 </div>
+                <ul className="space-y-2 mt-4">
+                  {exp.responsibilities.map((resp, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-300">
+                      <span className="text-[#00d4ff] mt-1.5">•</span>
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
               </Card>
             ))}
           </div>
@@ -343,204 +246,216 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="relative py-24 px-6 bg-dark-bg">
+      <section id="projects" className="py-24 px-6 bg-[#0f0f0f]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <Code2 className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">Completed Projects</h2>
-            </div>
-            <p className="text-lg text-purple-light">Real-world testing and automation projects</p>
-          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center">
+            My <span className="text-[#00d4ff]">Projects</span>
+          </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, idx) => {
-              const gradients = [
-                "bg-gradient-purple",
-                "bg-gradient-pink",
-                "bg-gradient-cyan",
-                "bg-gradient-teal",
-                "bg-gradient-purple"
-              ];
-              return (
-                <Card
-                  key={idx}
-                  className="glass p-6 rounded-2xl hover:shadow-lift transition-smooth hover:-translate-y-2 group border-purple/30"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between">
-                      <div className={`w-12 h-12 rounded-xl ${gradients[idx]} flex items-center justify-center`}>
-                        {project.type === "Automation" ? (
-                          <Code2 className="w-6 h-6 text-white" />
-                        ) : (
-                          <TestTube className="w-6 h-6 text-white" />
-                        )}
-                      </div>
-                      <Badge variant="secondary" className="text-xs bg-purple-dark text-purple-light">
-                        {project.type}
-                      </Badge>
-                    </div>
-                    <h3 className="font-heading text-xl font-semibold text-cyan-light">{project.title}</h3>
-                    <p className="text-purple-light text-sm leading-relaxed">{project.desc}</p>
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tech.map((tech, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs bg-purple-dark text-purple-light">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
+            {projects.map((project, idx) => (
+              <Card
+                key={idx}
+                className="bg-[#1a1a1a] border border-gray-800 p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-[#00d4ff]">{project.title}</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">{project.desc}</p>
+                <div className="flex gap-3">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff]"
+                  >
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                      <Code2 className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff]"
+                  >
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Demo
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-24 px-6 bg-[#0f0f0f]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-16">
+            <Globe className="w-8 h-8 text-[#00d4ff]" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-center">
+              <span className="text-[#00d4ff]">Technologies</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {technologies.map((tech, idx) => (
+              <Card
+                key={idx}
+                className="bg-[#1a1a1a] border border-gray-800 p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
+              >
+                <h3 className="text-xl font-semibold mb-4 text-[#00d4ff]">{tech.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {tech.items.map((item, i) => (
+                    <span
+                      key={i}
+                      className="bg-[#0a0a0a] border border-gray-700 text-gray-300 px-3 py-1 rounded-lg text-sm hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Publications Section */}
-      <section className="relative py-24 px-6 bg-dark-soft">
+      <section className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <BookOpen className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">Publications</h2>
-            </div>
-            <p className="text-lg text-purple-light">Research contributions</p>
+          <div className="flex items-center justify-center gap-3 mb-16">
+            <BookOpen className="w-8 h-8 text-[#00d4ff]" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-center">
+              <span className="text-[#00d4ff]">Publications</span>
+            </h2>
           </div>
 
-          <Card className="glass p-8 rounded-2xl shadow-soft border-purple/30">
-            <div className="space-y-4">
-              <h3 className="font-heading text-xl font-semibold text-cyan-light">
-                Comparative Analysis on Predicting Price Hike with Sources Using Different Machine Learning Algorithms
-              </h3>
-              <p className="text-purple-light">
-                <strong className="text-purple-bright">Authors:</strong> Taufique Hedayet, Anup Sen, Mahfuza Akter Jarin, Md. Shohel Rana Shaon, Joybordhan Sarkar and Sadah Anjum Shanto
-              </p>
-              <div className="flex items-center gap-2 text-sm text-purple-light">
-                <span className="text-purple">ICICT 2025, London</span>
-                <span>•</span>
-                <span>Volume 8, Conference proceedings</span>
-                <span>•</span>
-                <span>01 October 2025</span>
-              </div>
+          <Card className="bg-[#1a1a1a] border border-gray-800 p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4 text-[#00d4ff]">
+              Comparative Analysis on Predicting Price Hike with Sources Using Different Machine Learning Algorithms
+            </h3>
+            <p className="text-gray-300 mb-3">
+              <strong className="text-[#00d4ff]">Authors:</strong> Taufique Hedayet, Anup Sen, Mahfuza Akter Jarin, Md. Shohel Rana Shaon, Joybordhan Sarkar and Sadah Anjum Shanto
+            </p>
+            <div className="flex items-center gap-2 text-sm text-gray-400">
+              <span className="text-[#00d4ff]">ICICT 2025, London</span>
+              <span>•</span>
+              <span>Volume 8, Conference proceedings</span>
+              <span>•</span>
+              <span>01 October 2025</span>
             </div>
           </Card>
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="relative py-24 px-6 bg-dark-bg">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="flex items-center justify-center gap-3">
-              <Globe className="w-8 h-8 text-purple" />
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">Technologies</h2>
-            </div>
-            <p className="text-lg text-purple-light">Tools and technologies I work with</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {technologies.map((tech, idx) => {
-              const gradients = [
-                "bg-gradient-purple",
-                "bg-gradient-pink",
-                "bg-gradient-cyan"
-              ];
-              return (
-                <Card
-                  key={idx}
-                  className="glass p-8 rounded-2xl hover:shadow-lift transition-smooth border-purple/30"
-                >
-                  <div className="space-y-4">
-                    <div className={`w-14 h-14 rounded-2xl ${gradients[idx]} flex items-center justify-center`}>
-                      {idx === 0 ? (
-                        <Code2 className="w-7 h-7 text-white" />
-                      ) : idx === 1 ? (
-                        <TestTube className="w-7 h-7 text-white" />
-                      ) : (
-                        <FileText className="w-7 h-7 text-white" />
-                      )}
-                    </div>
-                    <h3 className="font-heading text-xl font-semibold text-cyan-light">{tech.category}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {tech.items.map((item, i) => (
-                        <Badge key={i} variant="secondary" className="text-sm bg-purple-dark text-purple-light">
-                          {item}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
-      <section className="relative py-24 px-6 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold text-cyan-light">
-            Let's Build Something Meaningful Together
+      <section className="py-24 px-6 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center">
+            Get In <span className="text-[#00d4ff]">Touch</span>
           </h2>
-          <p className="text-xl text-purple-light leading-relaxed">
-            Whether it's a project, an opportunity, or just a conversation about quality and technology—
-            I'd love to hear from you.
-          </p>
 
-          <div className="flex flex-wrap gap-4 justify-center pt-4">
-            <Button 
-              className="bg-gradient-teal text-white hover:shadow-glow transition-smooth hover:scale-105"
-              asChild
-            >
-              <a href="mailto:shohelranas165@gmail.com">
-                <Mail className="w-4 h-4 mr-2" />
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-[#00d4ff]">Email</h3>
+                <a
+                  href="mailto:shohelranas165@gmail.com"
+                  className="text-gray-300 hover:text-[#00d4ff] transition-colors"
+                >
+                  shohelranas165@gmail.com
+                </a>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-[#00d4ff]">Phone</h3>
+                <a
+                  href="tel:+880177693865"
+                  className="text-gray-300 hover:text-[#00d4ff] transition-colors"
+                >
+                  +880177693865
+                </a>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-[#00d4ff]">Location</h3>
+                <p className="text-gray-300">Rainkhola, Cha Block, Mirpur-2, Dhaka</p>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Label htmlFor="name" className="text-gray-300 mb-2 block">
+                  Name *
+                </Label>
+                <Input
+                  id="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff]"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div>
+                <Label htmlFor="email" className="text-gray-300 mb-2 block">
+                  Email *
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff]"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div>
+                <Label htmlFor="subject" className="text-gray-300 mb-2 block">
+                  Subject
+                </Label>
+                <Input
+                  id="subject"
+                  type="text"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff]"
+                  placeholder="Subject"
+                />
+              </div>
+              <div>
+                <Label htmlFor="message" className="text-gray-300 mb-2 block">
+                  Message *
+                </Label>
+                <Textarea
+                  id="message"
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] min-h-[120px]"
+                  placeholder="Your Message"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold py-6"
+              >
                 Send Message
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-purple text-purple hover:bg-purple hover:text-white hover:scale-105 transition-smooth"
-              asChild
-            >
-              <a href="tel:+880177693865">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Me
-              </a>
-            </Button>
+              </Button>
+            </form>
           </div>
-
-          {/* Footer Social */}
-          <div className="flex gap-6 justify-center pt-8">
-            <a 
-              href="https://github.com/shohelranashaon" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-purple hover:text-purple-bright transition-smooth hover:scale-110"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-            <a 
-              href="https://linkedin.com/in/md-shohel-rana-shaon" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-pink hover:text-pink-bright transition-smooth hover:scale-110"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a 
-              href="mailto:shohelranas165@gmail.com"
-              className="text-cyan hover:text-cyan-bright transition-smooth hover:scale-110"
-            >
-              <Mail className="w-6 h-6" />
-            </a>
-          </div>
-
-          <p className="text-sm text-purple-light/70 pt-8">
-            © 2024 Shohel Rana Shaon. Crafted with passion and attention to detail.
-          </p>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 bg-[#0a0a0a] border-t border-gray-800">
+        <div className="max-w-7xl mx-auto text-center text-gray-400">
+          <p>© 2025 Shohel Rana Shaon. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
