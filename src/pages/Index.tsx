@@ -113,7 +113,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center lg:items-start">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 z-10 lg:pt-8 text-center lg:text-left">
+            <div className="space-y-6 sm:space-y-8 z-10 lg:pt-8 text-center lg:text-left order-2 lg:order-1">
               <div className="space-y-4 sm:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                   Hi, I'm <span className="text-[#00d4ff]">Shohel Rana</span>
@@ -171,7 +171,7 @@ const Index = () => {
             </div>
 
             {/* Right - Profile Picture */}
-            <div className="relative flex items-center justify-center lg:justify-end order-first lg:order-last mt-8 lg:mt-0">
+            <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0 lg:mt-0">
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96">
                 {/* Glow effect behind */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
