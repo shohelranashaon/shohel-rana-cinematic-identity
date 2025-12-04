@@ -116,7 +116,7 @@ const Index = () => {
             <div className="space-y-6 sm:space-y-8 z-10 lg:pt-8 text-center lg:text-left order-2 lg:order-1">
               <div className="space-y-4 sm:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                  Hi, I'm <span className="text-[#00d4ff]">Shohel Rana</span>
+                  <span className="text-[#00d4ff]"> Md. Shohel Rana</span>
                   <br />
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
