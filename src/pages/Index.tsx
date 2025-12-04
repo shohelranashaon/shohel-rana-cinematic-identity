@@ -75,17 +75,6 @@ const Index = () => {
 
   const projects = [
     {
-      title: "Youth Organization Bangladesh",
-      desc: "YOB is a youth group in Bangladesh that helps young people learn skills, grow as leaders, and take part in social activities. I have tested the YOB website, including login, forms, password checks, and navigation, to ensure everything works smoothly.",
-      codeUrl: "#",
-      demoUrl: "#"
-    },
-    {
-      title: "Somvabona Web and Mobile App Testing",
-      desc: "Somvabona is a health screening system where doctors and medical assistants visit schools or institutions to check students' health. I have manually tested the Web and Mobile applications, including dashboard, schools and campuses management, doctors and medical assistants assignment, student health screening, invoices and reports, and user permissions.",
-      
-    },
-    {
       title: "Swag Labs Automation (Playwright + JavaScript)",
       desc: "Automated the Swag Labs website using Playwright with JavaScript to test login, add-to-cart, and checkout functionalities following the Page Object Model (POM) design. Implemented Allure reporting for detailed test execution results and debugging insights.",
       codeUrl: "https://github.com/shohelranashaon/SwagLabsAutomation",
@@ -96,6 +85,17 @@ const Index = () => {
       desc: "Developed an automation framework for the Convay Meeting Platform using Playwright (JavaScript), covering host meeting creation, link sharing, participant joining, and audio validation (mic mute/unmute, WebRTC permissions). Implemented a POM-based structure with centralized locators and reusable utilities, and integrated Allure reporting with cross-browser support.",
       codeUrl: "https://github.com/shohelranashaon/ConvayAssessment",
 
+    },
+    {
+      title: "Youth Organization Bangladesh",
+      desc: "YOB is a youth group in Bangladesh that helps young people learn skills, grow as leaders, and take part in social activities. I have tested the YOB website, including login, forms, password checks, and navigation, to ensure everything works smoothly.",
+      codeUrl: "#",
+      demoUrl: "#"
+    },
+    {
+      title: "Somvabona Web and Mobile App Testing",
+      desc: "Somvabona is a health screening system where doctors and medical assistants visit schools or institutions to check students' health. I have manually tested the Web and Mobile applications, including dashboard, schools and campuses management, doctors and medical assistants assignment, student health screening, invoices and reports, and user permissions.",
+      
     },
     {
       title: "Shomvabona Quiz App",
