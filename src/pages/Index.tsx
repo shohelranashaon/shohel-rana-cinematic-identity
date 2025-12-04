@@ -117,7 +117,7 @@ const Index = () => {
                   <br />
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify sm:text-left">
                 Software Test Engineer & SQA Explorer. Committed to building quality software through manual testing, automation, and continuous learning.
                 </p>
               </div>
@@ -196,7 +196,7 @@ const Index = () => {
               <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff]" />
               <h2 className="text-2xl sm:text-3xl font-bold text-[#00d4ff]">Career Objective</h2>
             </div>
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+            <p className="text-gray-300 leading-relaxed text-base sm:text-lg text-justify sm:text-left">
               To build a career as a SQA Engineer by applying skills in software testing, automation, and bug tracking to ensure product quality. Dedicated to continuous learning and growth with the aim of becoming an Automation Engineer in the future.
             </p>
           </Card>
@@ -234,7 +234,7 @@ const Index = () => {
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-300">
                       <span className="text-[#00d4ff] mt-1.5 flex-shrink-0">•</span>
-                      <span>{resp}</span>
+                      <span className="text-justify sm:text-left">{resp}</span>
                     </li>
                   ))}
                 </ul>
@@ -258,7 +258,7 @@ const Index = () => {
                 className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
               >
                 <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#00d4ff]">{project.title}</h3>
-                <p className="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed">{project.desc}</p>
+                <p className="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed text-justify sm:text-left">{project.desc}</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     asChild
@@ -331,13 +331,13 @@ const Index = () => {
           </div>
 
           <Card className="bg-[#1a1a1a] border border-gray-800 p-6 sm:p-8 rounded-lg">
-            <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#00d4ff]">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#00d4ff] text-justify sm:text-left">
               Comparative Analysis on Predicting Price Hike with Sources Using Different Machine Learning Algorithms
             </h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-3">
+            <p className="text-sm sm:text-base text-gray-300 mb-3 text-justify sm:text-left">
               <strong className="text-[#00d4ff]">Authors:</strong> Taufique Hedayet, Anup Sen, Mahfuza Akter Jarin, Md. Shohel Rana Shaon, Joybordhan Sarkar and Sadah Anjum Shanto
             </p>
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-400">
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-400 text-justify sm:text-left">
               <span className="text-[#00d4ff]">ICICT 2025, London</span>
               <span>•</span>
               <span>Volume 8, Conference proceedings</span>
@@ -362,7 +362,7 @@ const Index = () => {
                 <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#00d4ff]">Email</h3>
                 <a
                   href="mailto:shohelranas165@gmail.com"
-                  className="text-sm sm:text-base text-gray-300 hover:text-[#00d4ff] transition-colors break-all"
+                  className="text-sm sm:text-base text-gray-300 hover:text-[#00d4ff] transition-colors break-all text-justify sm:text-left block"
                 >
                   shohelranas165@gmail.com
                 </a>
@@ -371,14 +371,14 @@ const Index = () => {
                 <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#00d4ff]">Phone</h3>
                 <a
                   href="tel:+880177693865"
-                  className="text-sm sm:text-base text-gray-300 hover:text-[#00d4ff] transition-colors"
+                  className="text-sm sm:text-base text-gray-300 hover:text-[#00d4ff] transition-colors text-justify sm:text-left block"
                 >
                   +880177693865
                 </a>
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#00d4ff]">Location</h3>
-                <p className="text-sm sm:text-base text-gray-300">Rainkhola, Cha Block, Mirpur-2, Dhaka</p>
+                <p className="text-sm sm:text-base text-gray-300 text-justify sm:text-left">Rainkhola, Cha Block, Mirpur-2, Dhaka</p>
               </div>
             </div>
 
