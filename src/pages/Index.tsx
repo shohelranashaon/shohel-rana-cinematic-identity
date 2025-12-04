@@ -83,26 +83,23 @@ const Index = () => {
     {
       title: "Somvabona Web and Mobile App Testing",
       desc: "Somvabona is a health screening system where doctors and medical assistants visit schools or institutions to check students' health. I have manually tested the Web and Mobile applications, including dashboard, schools and campuses management, doctors and medical assistants assignment, student health screening, invoices and reports, and user permissions.",
-      codeUrl: "#",
-      demoUrl: "#"
+      
     },
     {
       title: "Swag Labs Automation (Playwright + JavaScript)",
       desc: "Automated the Swag Labs website using Playwright with JavaScript to test login, add-to-cart, and checkout functionalities following the Page Object Model (POM) design. Implemented Allure reporting for detailed test execution results and debugging insights.",
-      codeUrl: "https://github.com/shohelranashaon",
-      demoUrl: "#"
+      codeUrl: "https://github.com/shohelranashaon/SwagLabsAutomation",
+     
     },
     {
       title: "Convay Meeting Automation (Playwright + JavaScript)",
       desc: "Developed an automation framework for the Convay Meeting Platform using Playwright (JavaScript), covering host meeting creation, link sharing, participant joining, and audio validation (mic mute/unmute, WebRTC permissions). Implemented a POM-based structure with centralized locators and reusable utilities, and integrated Allure reporting with cross-browser support.",
-      codeUrl: "https://github.com/shohelranashaon",
-      demoUrl: "#"
+      codeUrl: "https://github.com/shohelranashaon/ConvayAssessment",
+
     },
     {
       title: "Shomvabona Quiz App",
       desc: "Tested the Somvabona web and mobile app manually to ensure smooth performance. I checked main features like the dashboard, school and user management, attendance, quizzes, reports, and user permissions to confirm everything works properly.",
-      codeUrl: "#",
-      demoUrl: "#"
     }
   ];
 
@@ -121,7 +118,7 @@ const Index = () => {
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                  Software Test Engineer & SQA Specialist. Building quality software through testing, automation, and continuous learning.
+                Software Test Engineer & SQA Explorer. Committed to building quality software through manual testing, automation, and continuous learning.
                 </p>
               </div>
 
