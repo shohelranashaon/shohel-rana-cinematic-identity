@@ -25,8 +25,9 @@ const Index = () => {
 
   const experiences = [
     {
-      title: "Software Test Engineer",
+      title: "IT Officer",
       company: "NGO Forum for Public Health (ERP System)",
+      Project: "UNHCR",
       period: "Sep 2025 – Present",
       responsibilities: [
         "Working as a core QA member for the NGO Forum ERP system",
@@ -37,13 +38,21 @@ const Index = () => {
         "Testing HRM processes such as attendance, leave, payroll, and employee lifecycle",
         "Ensuring accounting module accuracy including voucher, ledger, COA mapping, and financial reporting",
         "Reporting and tracking issues with Jira/Excel and ensuring timely fixes",
-        "Assisting in UAT and communicating with development & business teams for smooth deployment"
+        "Assisting in UAT and communicating with development & business teams for smooth deployment",
+        "Managing networking with partners including Internet line providers for UNHCR project",
+        "Handling Microsoft 365 issues and maintaining main domain servers",
+        "Communicating with UNHCR regarding IT reports and documentation",
+        "Managing IT asset tracking, updating, and maintaining accurate inventory records",
+        "Installing IT devices and configuring network connections for office and field locations",
+        "Providing day-to-day end user service support at both office and field levels",
+        "Coordinating repair and maintenance of IT assets with external vendors",
+        "Working collaboratively with HR & Admin departments for seamless operations"
       ]
     },
     {
       title: "Jr. SQA Engineer",
       company: "4axiz IT Ltd.",
-      period: "Jan 2025 – Aug 2025",
+      period: "Oct 2024 – Aug 2025",
       responsibilities: [
         "Tested mobile and web applications to ensure quality and performance",
         "Worked with ERP to improve software usability",
@@ -58,7 +67,7 @@ const Index = () => {
     {
       title: "Jr. SQA Engineer (Intern)",
       company: "4axiz IT Ltd.",
-      period: "Oct 2024 – Dec 2024",
+      period: "Jul 2024 – Sep 2024",
       responsibilities: [
         "Performed manual testing for web and mobile applications",
         "Created and executed test cases to identify and report bugs",
@@ -85,6 +94,14 @@ const Index = () => {
       desc: "Developed an automation framework for the Convay Meeting Platform using Playwright (JavaScript), covering host meeting creation, link sharing, participant joining, and audio validation (mic mute/unmute, WebRTC permissions). Implemented a POM-based structure with centralized locators and reusable utilities, and integrated Allure reporting with cross-browser support.",
       codeUrl: "https://github.com/shohelranashaon/ConvayAssessment",
 
+    },
+    {
+      title: "NGO Forum ERP System - HRM Module",
+      desc: "Completed comprehensive testing and quality assurance for the HRM (Human Resource Management) module of the NGO Forum ERP system. Successfully tested and validated all HRM functionalities including Employee management, Payroll processing, Attendance tracking, Leave management (application, approval, and tracking), Movement management, Tour management, HR Admin operations, Event management, Document handling, Office Policy management, System Setup configurations, and comprehensive Reporting features. Ensured seamless integration between all HRM sub-modules and validated end-to-end workflows for accurate business process execution.",
+    },
+    {
+      title: "4erp For NGO Forum Mobile App",
+      desc: "Successfully completed comprehensive testing of the HRM Mobile Application. Tested all mobile app functionalities including user authentication, employee management features, attendance tracking, leave management, payroll access, and other HRM operations on mobile devices. Ensured smooth user experience, proper navigation, data synchronization with the web platform, and validated all mobile-specific features. The project was completed successfully with all test cases passed and the mobile app is now fully functional.",
     },
     {
       title: "Youth Organization Bangladesh",
