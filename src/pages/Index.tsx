@@ -30,8 +30,7 @@ const Index = () => {
   const experiences = [
     {
       title: "IT Officer",
-      company: "NGO Forum for Public Health (ERP System)",
-      Project: "UNHCR",
+      company: "(UNHCR Project-NGO Forum for Public Health)",
       period: "Sep 2025 – Present",
       responsibilities: [
         "Working as a core QA member for the NGO Forum ERP system",
