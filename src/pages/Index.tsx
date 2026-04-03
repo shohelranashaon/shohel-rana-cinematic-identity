@@ -129,16 +129,16 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen min-h-[100dvh] flex items-start pt-[max(4rem,env(safe-area-inset-top,0px)+2.5rem)] sm:pt-20 px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center lg:items-start">
-            {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 lg:pt-8 text-center lg:text-left order-2 lg:order-1 mt-4 sm:mt-6 lg:mt-0 max-w-2xl mx-auto lg:max-w-none lg:mx-0">
-              <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-[1.65rem] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.15] sm:leading-tight text-balance break-words">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 lg:gap-x-14 xl:gap-x-16 items-center">
+            {/* Left Content — vertically centered with photo on large screens */}
+            <div className="space-y-5 sm:space-y-7 lg:space-y-6 text-center lg:text-left order-2 lg:order-1 mt-4 sm:mt-6 lg:mt-0 max-w-2xl mx-auto lg:max-w-none lg:mx-0 lg:self-center">
+              <div className="space-y-3 sm:space-y-5 lg:space-y-4">
+                <h1 className="text-[1.65rem] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.15] sm:leading-tight lg:leading-[1.1] text-balance break-words">
                   <span className="text-[#00d4ff]"> Md. Shohel Rana</span>
                   <br />
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-pretty sm:text-left max-w-prose mx-auto lg:mx-0">
+                <p className="text-base sm:text-lg lg:text-lg xl:text-xl text-gray-300 leading-relaxed text-pretty sm:text-left max-w-prose mx-auto lg:mx-0">
                 Software Test Engineer & SQA Explorer. Committed to building quality software through manual testing, automation, and continuous learning.
                 </p>
               </div>
@@ -189,8 +189,8 @@ const Index = () => {
             </div>
 
             {/* Right - Profile picture in passport-style frame (35×45 mm ratio) */}
-            <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-10 lg:mb-0 lg:mt-0 shrink-0">
-              <div className="relative w-[9.25rem] min-[400px]:w-36 sm:w-44 md:w-52 lg:w-60 aspect-[35/45] max-w-[min(100%,15rem)] sm:max-w-none">
+            <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-10 lg:mb-0 lg:mt-0 shrink-0 lg:self-center">
+              <div className="relative w-44 min-[400px]:w-48 sm:w-52 md:w-56 lg:w-[17rem] xl:w-[19rem] aspect-[35/45] max-w-[min(100%,20rem)] sm:max-w-none">
                 {/* Glow effect behind */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
                 {/* Border with glow — upright passport proportions */}
@@ -199,8 +199,8 @@ const Index = () => {
                     <img
                       src={heroPortrait}
                       alt="Shohel Rana Shaon"
-                      width={180}
-                      height={232}
+                      width={304}
+                      height={391}
                       decoding="async"
                       fetchPriority="high"
                       className="rounded-sm w-full h-full object-cover object-top"
