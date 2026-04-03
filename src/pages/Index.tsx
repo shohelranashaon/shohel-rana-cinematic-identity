@@ -7,6 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Github, Linkedin, Mail, Phone, MapPin, Code2, ExternalLink, Briefcase, BookOpen, FileText, TestTube, Globe } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.PNG";
 
+function isValidProjectLink(url?: string): boolean {
+  return typeof url === "string" && /^https?:\/\//i.test(url.trim());
+}
+
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -121,26 +125,26 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen min-h-[100dvh] bg-[#0a0a0a] text-white overflow-x-clip pb-[env(safe-area-inset-bottom,0px)]">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-start pt-16 sm:pt-20 px-4 sm:px-6 py-12 sm:py-20 overflow-hidden">
+      <section className="relative min-h-screen min-h-[100dvh] flex items-start pt-[max(4rem,env(safe-area-inset-top,0px)+2.5rem)] sm:pt-20 px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center lg:items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center lg:items-start">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 lg:pt-8 text-center lg:text-left order-2 lg:order-1 mt-8 sm:mt-6 lg:mt-0">
+            <div className="space-y-6 sm:space-y-8 lg:pt-8 text-center lg:text-left order-2 lg:order-1 mt-4 sm:mt-6 lg:mt-0 max-w-2xl mx-auto lg:max-w-none lg:mx-0">
               <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-[1.65rem] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.15] sm:leading-tight text-balance break-words">
                   <span className="text-[#00d4ff]"> Md. Shohel Rana</span>
                   <br />
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify sm:text-left">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-pretty sm:text-left max-w-prose mx-auto lg:mx-0">
                 Software Test Engineer & SQA Explorer. Committed to building quality software through manual testing, automation, and continuous learning.
                 </p>
               </div>
 
               {/* Social Icons - Square buttons */}
-              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
                 <a
                   href="https://www.linkedin.com/in/md-shohel-rana-shaon-306183209/"
                   target="_blank"
@@ -177,25 +181,29 @@ const Index = () => {
                   onClick={() => {
                     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold px-6 sm:px-8 py-5 sm:py-6 rounded-lg transition-all shadow-lg shadow-[#00d4ff]/30 text-sm sm:text-base active:scale-95"
+                  className="bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold min-h-12 sm:min-h-14 px-6 sm:px-8 py-3 sm:py-6 rounded-lg transition-all shadow-lg shadow-[#00d4ff]/30 text-base active:scale-95 w-full min-[400px]:w-auto"
                 >
                   View My Work
                 </Button>
               </div>
             </div>
 
-            {/* Right - Profile Picture */}
-            <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-10 sm:mb-8 lg:mb-0 lg:mt-0">
-              <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
+            {/* Right - Profile picture in passport-style frame (35×45 mm ratio) */}
+            <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-10 lg:mb-0 lg:mt-0 shrink-0">
+              <div className="relative w-[9.25rem] min-[400px]:w-36 sm:w-44 md:w-52 lg:w-60 aspect-[35/45] max-w-[min(100%,15rem)] sm:max-w-none">
                 {/* Glow effect behind */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
-                {/* Border with glow */}
-                <div className="relative rounded-xl border-4 border-[#00d4ff] p-1 shadow-[0_0_50px_rgba(0,212,255,0.6)]">
-                  <div className="rounded-xl overflow-hidden bg-[#1a1a1a] p-1">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
+                {/* Border with glow — upright passport proportions */}
+                <div className="relative h-full rounded-lg border-4 border-[#00d4ff] p-1 shadow-[0_0_50px_rgba(0,212,255,0.6)]">
+                  <div className="h-full rounded-md overflow-hidden bg-[#1a1a1a] p-1">
                     <img
                       src={heroPortrait}
                       alt="Shohel Rana Shaon"
-                      className="rounded-xl w-full h-full object-cover"
+                      width={180}
+                      height={232}
+                      decoding="async"
+                      fetchPriority="high"
+                      className="rounded-sm w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -206,14 +214,14 @@ const Index = () => {
       </section>
 
       {/* Career Objective Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-[#1a1a1a] border border-gray-800 p-6 sm:p-8 rounded-lg">
-            <div className="flex items-center gap-2 sm:gap-3 mb-4">
-              <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff]" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#00d4ff]">Career Objective</h2>
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
+        <div className="max-w-4xl mx-auto w-full">
+          <Card className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-8 rounded-lg">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
+              <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#00d4ff] text-balance">Career Objective</h2>
             </div>
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg text-justify sm:text-left">
+            <p className="text-gray-300 leading-relaxed text-base sm:text-lg text-pretty sm:text-left">
               To build a career as a SQA Engineer by applying skills in software testing, automation, and bug tracking to ensure product quality. Dedicated to continuous learning and growth with the aim of becoming an Automation Engineer in the future.
             </p>
           </Card>
@@ -221,11 +229,11 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16">
-            <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff]" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 px-1">
+            <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-balance">
               <span className="text-[#00d4ff]">Experience</span>
             </h2>
           </div>
@@ -237,21 +245,21 @@ const Index = () => {
                 className="bg-[#1a1a1a] border border-gray-800 p-4 sm:p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 text-[#00d4ff]">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 text-[#00d4ff] break-words">
                       {exp.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-300">{exp.company}</p>
+                    <p className="text-sm sm:text-base text-gray-300 break-words">{exp.company}</p>
                   </div>
-                  <div className="bg-[#00d4ff] text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-sm sm:text-base w-fit">
+                  <div className="bg-[#00d4ff] text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-sm sm:text-base w-fit shrink-0 self-start sm:self-auto">
                     {exp.period}
                   </div>
                 </div>
                 <ul className="space-y-2 mt-4">
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-300">
-                      <span className="text-[#00d4ff] mt-1.5 flex-shrink-0">•</span>
-                      <span className="text-justify sm:text-left">{resp}</span>
+                      <span className="text-[#00d4ff] mt-1.5 shrink-0">•</span>
+                      <span className="text-pretty sm:text-left min-w-0 break-words">{resp}</span>
                     </li>
                   ))}
                 </ul>
@@ -262,59 +270,83 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0f0f0f]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 text-center">
+      <section id="projects" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0f0f0f] scroll-mt-6">
+        <div className="max-w-7xl mx-auto w-full">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 text-center text-balance">
             My <span className="text-[#00d4ff]">Projects</span>
           </h2>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {projects.map((project, idx) => (
-              <Card
-                key={idx}
-                className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all"
-              >
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#00d4ff]">{project.title}</h3>
-                <p className="text-sm sm:text-base text-gray-300 mb-6 leading-relaxed text-justify sm:text-left">{project.desc}</p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff] text-sm sm:text-base py-5 sm:py-6 active:scale-95"
-                  >
-                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                      <Code2 className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff] text-sm sm:text-base py-5 sm:py-6 active:scale-95"
-                  >
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </a>
-                  </Button>
-                </div>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+            {projects.map((project, idx) => {
+              const hasCode = isValidProjectLink(project.codeUrl);
+              const hasDemo = isValidProjectLink(project.demoUrl);
+              return (
+                <Card
+                  key={idx}
+                  className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-6 rounded-lg hover:border-[#00d4ff]/50 transition-all flex flex-col h-full min-h-0"
+                >
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#00d4ff] break-words text-pretty">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-pretty sm:text-left flex-1 min-h-0">
+                    {project.desc}
+                  </p>
+                  {(hasCode || hasDemo) && (
+                    <div className="flex flex-col min-[480px]:flex-row gap-3 mt-6">
+                      {hasCode && (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff] text-base min-h-12 sm:min-h-14 py-3 sm:py-6 active:scale-95"
+                        >
+                          <a
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2"
+                          >
+                            <Code2 className="w-4 h-4 shrink-0" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
+                      {hasDemo && (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="flex-1 border-gray-700 text-gray-300 hover:border-[#00d4ff] hover:text-[#00d4ff] text-base min-h-12 sm:min-h-14 py-3 sm:py-6 active:scale-95"
+                        >
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2"
+                          >
+                            <ExternalLink className="w-4 h-4 shrink-0" />
+                            Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0f0f0f]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16">
-            <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff]" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0f0f0f]">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 px-1">
+            <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-balance">
               <span className="text-[#00d4ff]">Technologies</span>
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
             {technologies.map((tech, idx) => (
               <Card
                 key={idx}
@@ -338,23 +370,23 @@ const Index = () => {
       </section>
 
       {/* Publications Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16">
-            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff]" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
+        <div className="max-w-4xl mx-auto w-full">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 px-1">
+            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-balance">
               <span className="text-[#00d4ff]">Publications</span>
             </h2>
           </div>
 
-          <Card className="bg-[#1a1a1a] border border-gray-800 p-6 sm:p-8 rounded-lg">
-            <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#00d4ff] text-justify sm:text-left">
+          <Card className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-8 rounded-lg">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 text-[#00d4ff] text-pretty sm:text-left break-words">
               Comparative Analysis on Predicting Price Hike with Sources Using Different Machine Learning Algorithms
             </h3>
-            <p className="text-sm sm:text-base text-gray-300 mb-3 text-justify sm:text-left">
+            <p className="text-sm sm:text-base text-gray-300 mb-3 text-pretty sm:text-left break-words">
               <strong className="text-[#00d4ff]">Authors:</strong> Taufique Hedayet, Anup Sen, Mahfuza Akter Jarin, Md. Shohel Rana Shaon, Joybordhan Sarkar and Sadah Anjum Shanto
             </p>
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-400 text-justify sm:text-left">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-400 text-pretty sm:text-left">
               <span className="text-[#00d4ff]">ICICT 2025, London</span>
               <span>•</span>
               <span>Volume 8, Conference proceedings</span>
@@ -366,13 +398,13 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 text-center">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto w-full">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 text-center text-balance">
             Get In <span className="text-[#00d4ff]">Touch</span>
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
             {/* Contact Info */}
             <div className="space-y-6 sm:space-y-8">
               <div>
@@ -411,7 +443,7 @@ const Index = () => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-sm sm:text-base py-5 sm:py-6"
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-base min-h-12 py-3 sm:py-6"
                   placeholder="Your Name"
                 />
               </div>
@@ -425,7 +457,7 @@ const Index = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-sm sm:text-base py-5 sm:py-6"
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-base min-h-12 py-3 sm:py-6"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -438,7 +470,7 @@ const Index = () => {
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-sm sm:text-base py-5 sm:py-6"
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] text-base min-h-12 py-3 sm:py-6"
                   placeholder="Subject"
                 />
               </div>
@@ -451,13 +483,13 @@ const Index = () => {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] min-h-[120px] text-sm sm:text-base py-5 sm:py-6"
+                  className="bg-[#1a1a1a] border-gray-700 text-white focus:border-[#00d4ff] min-h-[8.5rem] sm:min-h-[120px] text-base py-3 sm:py-6 resize-y"
                   placeholder="Your Message"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold py-5 sm:py-6 text-sm sm:text-base active:scale-95"
+                className="w-full bg-[#00d4ff] hover:bg-[#00b8e6] text-black font-semibold min-h-12 sm:min-h-14 py-3 sm:py-6 text-base active:scale-95"
               >
                 Send Message
               </Button>
@@ -467,9 +499,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 sm:py-8 px-4 sm:px-6 bg-[#0a0a0a] border-t border-gray-800">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 bg-[#0a0a0a] border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
-          <p className="text-sm sm:text-base">© 2025 Shohel Rana Shaon. All rights reserved.</p>
+          <p className="text-sm sm:text-base">© 2026 Shohel Rana Shaon. All rights reserved.</p>
         </div>
       </footer>
     </div>
