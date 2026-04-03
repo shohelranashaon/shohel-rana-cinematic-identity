@@ -139,7 +139,7 @@ const Index = () => {
                   <span className="text-[#00d4ff]">Shaon</span>
                 </h1>
                 <p className="text-base sm:text-lg lg:text-lg xl:text-xl text-gray-300 leading-relaxed text-pretty sm:text-left max-w-prose mx-auto lg:mx-0">
-                Software Test Engineer & SQA Explorer. Committed to building quality software through manual testing, automation, and continuous learning.
+                IT Officer, Software Test Engineer & SQA Explorer,committed to building quality software through manual testing, automation, and continuous learning.
                 </p>
               </div>
 
@@ -427,7 +427,7 @@ const Index = () => {
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#00d4ff]">Location</h3>
-                <p className="text-sm sm:text-base text-gray-300 text-justify sm:text-left">Rainkhola, Cha Block, Mirpur-2, Dhaka</p>
+                <p className="text-sm sm:text-base text-gray-300 text-justify sm:text-left">Light House Area, Kolatoli, Cox's Bazar</p>
               </div>
             </div>
 
