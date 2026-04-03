@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Github, Linkedin, Mail, Phone, MapPin, Code2, ExternalLink, Briefcase, BookOpen, FileText, TestTube, Globe } from "lucide-react";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortrait from "@/assets/hero-portrait.PNG";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -164,7 +164,7 @@ const Index = () => {
                   <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </a>
                 <a
-                  href="tel:+880177693865"
+                  href="tel:+8801776938165"
                   className="w-12 h-12 sm:w-14 sm:h-14 bg-[#1a1a1a] border border-gray-800 rounded-lg flex items-center justify-center hover:border-[#00d4ff] hover:bg-[#1a1a1a]/50 transition-all active:scale-95"
                 >
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
