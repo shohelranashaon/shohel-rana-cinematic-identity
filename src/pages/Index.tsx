@@ -127,7 +127,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center lg:items-start">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 z-10 lg:pt-8 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-6 sm:space-y-8 lg:pt-8 text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0">
               <div className="space-y-4 sm:space-y-6">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                   <span className="text-[#00d4ff]"> Md. Shohel Rana</span>
@@ -186,7 +186,7 @@ const Index = () => {
 
             {/* Right - Profile Picture */}
             <div className="relative flex items-center justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0 lg:mt-0">
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
                 {/* Glow effect behind */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#0099cc] to-[#00d4ff] opacity-30 blur-3xl animate-pulse" />
                 {/* Border with glow */}
@@ -387,10 +387,10 @@ const Index = () => {
               <div>
                 <h3 className="text-base sm:text-lg font-semibold mb-2 text-[#00d4ff]">Phone</h3>
                 <a
-                  href="tel:+880177693865"
+                  href="tel:+8801776938165"
                   className="text-sm sm:text-base text-gray-300 hover:text-[#00d4ff] transition-colors text-justify sm:text-left block"
                 >
-                  +880177693865
+                  +8801776938165
                 </a>
               </div>
               <div>
