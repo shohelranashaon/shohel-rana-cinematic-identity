@@ -222,7 +222,7 @@ const Index = () => {
                 Career Objective
               </h2>
             </div>
-            <p className="text-gray-300 text-[0.9375rem] min-[400px]:text-base sm:text-lg leading-[1.65] sm:leading-relaxed text-pretty text-left break-words max-w-prose mx-auto sm:mx-0">
+            <p className="w-full max-w-none text-gray-300 text-[0.9375rem] min-[400px]:text-base sm:text-lg leading-[1.65] sm:leading-relaxed text-justify sm:text-left text-pretty sm:max-w-prose">
               To build a career as a SQA Engineer by applying skills in software testing, automation, and bug tracking to ensure product quality. Dedicated to continuous learning and growth with the aim of becoming an Automation Engineer in the future.
             </p>
           </Card>
