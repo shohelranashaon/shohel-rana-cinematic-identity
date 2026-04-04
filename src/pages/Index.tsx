@@ -213,14 +213,16 @@ const Index = () => {
       </section>
 
       {/* Career Objective Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto w-full">
-          <Card className="bg-[#1a1a1a] border border-gray-800 p-5 sm:p-8 rounded-lg">
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
-              <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#00d4ff] text-balance">Career Objective</h2>
+      <section className="py-10 sm:py-16 md:py-24 px-3 min-[400px]:px-4 sm:px-6 md:px-8 bg-[#0a0a0a]">
+        <div className="max-w-4xl mx-auto w-full min-w-0">
+          <Card className="bg-[#1a1a1a] border border-gray-800 rounded-xl sm:rounded-lg p-4 pt-5 pb-5 sm:p-6 md:p-8 w-full min-w-0 overflow-hidden">
+            <div className="flex flex-col items-center text-center gap-2.5 mb-4 sm:mb-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-start sm:text-left sm:gap-3">
+              <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-[#00d4ff] shrink-0" aria-hidden />
+              <h2 className="text-[1.35rem] min-[400px]:text-2xl sm:text-3xl font-bold text-[#00d4ff] text-balance leading-tight px-1 sm:px-0 max-w-[22rem] sm:max-w-none">
+                Career Objective
+              </h2>
             </div>
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg text-pretty sm:text-left">
+            <p className="text-gray-300 text-[0.9375rem] min-[400px]:text-base sm:text-lg leading-[1.65] sm:leading-relaxed text-pretty text-left break-words max-w-prose mx-auto sm:mx-0">
               To build a career as a SQA Engineer by applying skills in software testing, automation, and bug tracking to ensure product quality. Dedicated to continuous learning and growth with the aim of becoming an Automation Engineer in the future.
             </p>
           </Card>
